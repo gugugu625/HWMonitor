@@ -6,6 +6,7 @@ unsigned long LastUpdate = 0;
 unsigned long LastDraw = 0;
 bool TimeOutFlag = 0;
 void setup() {
+  pinMode(4,OUTPUT);
   tft.init();
   tft.setRotation(3);
   tft.fillScreen(TFT_BLACK);
@@ -38,6 +39,7 @@ void loop() {
   }
 
   if(!TimeOutFlag){
+    digitalWrite(4,HIGH);
     DrawCPUData();
     DrawGPUData();
     DrawRAMData();
@@ -51,6 +53,7 @@ void loop() {
     Serial.println("TimeOutFlag");
     TimeOutFlag = 1;
     tft.fillScreen(TFT_BLACK);
+    digitalWrite(4,LOW);
   }
   if(SerialData=="GetDeviceName"){
     Serial2.println("HardwareMonitor");
