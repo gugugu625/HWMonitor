@@ -1,6 +1,7 @@
 #include <SPI.h>
 #include <TFT_eSPI.h>
 #include <ArduinoJson.h>
+#include <Base64.h>
 #include "HardwareData.h"
 #include "Font.h"
 #include "Image.h"
@@ -19,3 +20,6 @@ void SetCPUData(double);
 void fillSector(TFT_eSprite *sprite,int x,int y, int start_angle, int sub_angle, int r, unsigned int colour);
 void DrawProcessBar1(int x, int y,int data,const uint16_t *icon);
 void DrawProcessBar2(int x, int y,String title,int data);
+
+String Base64Encode(String str);
+String Base64Decode(String str);

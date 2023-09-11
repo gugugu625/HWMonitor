@@ -57,6 +57,7 @@
         "memory_resource": "cpp",
         "netfwd": "cpp",
         "random": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "regex": "cpp"
     }
 }
