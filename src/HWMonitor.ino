@@ -13,13 +13,13 @@ void setup() {
   tft.setRotation(3);
   tft.fillScreen(TFT_BLACK);
   Serial.begin(115200);
-  Serial2.begin(115200);
+  //Serial2.begin(115200);
 }
 
 void loop() {
   
-  while(Serial2.available()>0) {
-    SerialData += char(Serial2.read());
+  while(Serial.available()>0) {
+    SerialData += char(Serial.read());
   }
   SerialData.trim();
 
@@ -65,7 +65,7 @@ void loop() {
     digitalWrite(4,LOW);
   }
   if(SerialData=="GetDeviceName"){
-    Serial2.println("HardwareMonitor");
+    Serial.println("HardwareMonitor");
     SerialData = "";
   }
   
